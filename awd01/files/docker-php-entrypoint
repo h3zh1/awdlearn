@@ -1,0 +1,14 @@
+#!/bin/sh
+
+echo "flag{awdtest4h3zh1}" > /flag
+
+export FLAG=not_flag
+FLAG=not_flag
+
+/usr/sbin/sshd -D &
+php-fpm &
+php -S 0.0.0.0:80
+
+echo "Running..."
+
+tail -F /dev/null
