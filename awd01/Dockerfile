@@ -1,6 +1,6 @@
 FROM php:7.3-fpm-alpine
 COPY files /tmp/
-COPY src /var/www/html
+COPY src /var/www
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories \
 	# install somthing
 	&& apk add --update --no-cache nginx \
